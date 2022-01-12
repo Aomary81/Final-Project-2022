@@ -24,7 +24,7 @@
   /*establish database connection*/
   $servername = "localhost";
   $username = "root";
-  $password = "password"
+  $password = "password";
   $dbname = "MyDatabase";
 
   $mysqli = new mysqli($servername, $username, $password, $dbname);
