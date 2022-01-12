@@ -91,5 +91,5 @@
   $_SESSION['uid'] = $uid;
   echo $uid;
   $mysqli->close();
- header('Location: logstatus.php');
+  header('Location: log_status.php');
 ?>
