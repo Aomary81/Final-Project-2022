@@ -34,7 +34,7 @@
 
 	$servername = "localhost";
 	$username = "root";
-	$password = "password";
+        $password = "password";
 	$dbname = "MyDatabase";
 
 	$mysqli = new mysqli($servername, $username, $password, $dbname);
@@ -54,18 +54,19 @@
 	else{
 		echo 'Error Creating Table. '.$mysqli->error.'<br>';
 	}
-*/	
+ */	
+        echo $user;
 	$sql = "SELECT Userid FROM Accounts";
 	$result = $mysqli->query($sql);
 	if($result->num_rows > 0){
-		while($row = $result->fetch_assoc()){
-			$uid_ref = $row["userid"];
-			if(strcmp($user, $uid_ref) == 0){}
-			else{
+          while($row = $result->fetch_assoc()){
+			$uid_ref = $row["Userid"];
+			if(strcmp($user, $uid_ref) == 0){
 				echo 'Username already Exists<br>';
 				echo '<a href = "accountcreation.html">Try Again!</a><br><br>';
 				exit();
-			}
+                        }
+                        else{}
 		}
 	}
 	$sql = "SELECT AccountNumber FROM Accounts";
@@ -84,7 +85,8 @@
 	$sql = "INSERT INTO Accounts (AccountNumber, Userid, Password, Name, Email)VALUES('$id_num', '$user','$pass','$name','$email')";
  	$result = $mysqli->query($sql);
 	if($result){
-		echo 'Insert into table successfull<br>';
+          echo 'Insert into table successfully! Waiting to redirect..<br>';
+          header('Refresh:3; URL=login.html');
 	}
 	else{
 		echo 'Error inserting into Table. '.$mysqli->error.'<br>';
