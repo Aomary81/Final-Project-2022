@@ -22,6 +22,8 @@
     if(strcmp($uid, 'Guest') == 0) {
       echo 'Not currently logged in (Guest).<br><br>';
       echo '<a href = "login.html">Click here to log in</a><br><br>';
+      echo '<a href = "contactus.html">Click here to contact us!</a><br><br>';
+
     } 
     else {
       echo 'Logged in as '.$uid.'<br><br>';

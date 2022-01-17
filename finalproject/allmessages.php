@@ -2,13 +2,16 @@
     <h2>Welcome to our Forum! Here is the history of all the messages posted in the forum!<br><br></h2>
     <body style = "background-color: silver">
 
+<!--Clickable link to return to the main page!--> 
+<a href="log_status.php">Click here to return to the main page!</a><br><br>
+
 <?php
     // Set up the database login info and connect to the MySQL Database
 	$servername = "localhost";
 	$username = "root";
-    $password = "password";
+        $password = "password";
 	$dbname = "MyDatabase";
-    $number = 1;
+        $number = 1;
 
 	// Establish the connection with the database
 	$mysqli = new mysqli($servername, $username, $password, $dbname);
@@ -62,9 +65,7 @@
     else {
         echo 'No specified message found!<br>';
     }
-
-    // Clickable link to return to the main page 
-    echo '<a href="log_status.php">Click here to return to the main page!</a><br><br>';
     ?>
+
     </body>
 </html>
